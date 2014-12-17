@@ -1,0 +1,403 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>FOAF-Maker - Create FOAF profiles with ease </title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap validator -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/css/bootstrapValidator.min.css"/>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h2>FOAF Maker</h2>
+
+            <p>bla bla bla.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <form id="foafForm" role="form" class="form-horizontal"
+              data-bv-feedbackicons-valid="glyphicon glyphicon-ok"
+              data-bv-feedbackicons-invalid="glyphicon glyphicon-remove"
+              data-bv-feedbackicons-validating="glyphicon glyphicon-refresh">
+
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Personal Data
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="FirstName"  class="col-lg-3 control-label">First Name</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="FirstName" id="FirstName" placeholder="First Name (e.g., John)" required>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="LastName" class="col-lg-3 control-label">Last Name</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="LastName" id="LastName" placeholder="Last Name" required>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Nickname" class="col-lg-3 control-label">Nickname</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="Nickname" id="Nickname" placeholder="Nickname" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Email" class="col-lg-3 control-label">Email</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="FirstName" id="Email" placeholder="Email Address"
+                                       data-bv-emailaddress="true"
+                                       data-bv-emailaddress-message="The value is not a valid email address"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Homepage" class="col-lg-3 control-label">Homepage</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="Homepage" id="Homepage" placeholder="Homepage"
+                                       data-bv-uri="true"
+                                       data-bv-uri-message="The homepage is not valid URL"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Blog" class="col-lg-3 control-label">Blog</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="Blog" id="Blog" placeholder="Blog"
+                                       data-bv-uri="true"
+                                       data-bv-uri-message="The weblog is not valid URL"
+                                       required />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="Phone" class="col-lg-3 control-label">Phone Number</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="Phone" id="Phone" placeholder="Phone Number"
+                                       data-bv-phone="true"
+                                       data-bv-phone-country="es"
+                                       data-bv-phone-message="The value is not a valid phone number"
+                                       required />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        Work
+                    </div>
+                    <div class="panel-body">
+                        <div class="form-group">
+                            <label for="FirstName"  class="col-lg-3 control-label">First Name</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="FirstName" id="FirstName" placeholder="First Name (e.g., John)" required>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="LastName" class="col-lg-3 control-label">Last Name</label>
+                            <div class="input-group">
+                                <input type="text" class="form-control" name="LastName" id="LastName" placeholder="Last Name" required>
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-asterisk"></span></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Options</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="option[]" />
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-default addButton"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <!-- The option field template containing an option field and a Remove button -->
+                        <div class="form-group hide" id="optionTemplate">
+                            <div class="col-sm-offset-3 col-sm-5">
+                                <input class="form-control" type="text" name="option[]" />
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-default removeButton"><i class="fa fa-minus"></i></button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">Past Projects</label>
+                            <div class="col-sm-5">
+                                <input type="text" class="form-control" name="pastprojects[]"
+                                       data-bv-uri="true"
+                                       data-bv-uri-message="The project is not valid URL"
+                                       required />
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-default addPastProject"><i class="fa fa-plus"></i></button>
+                            </div>
+                        </div>
+                        <!-- The option field template containing an option field and a Remove button -->
+                        <div class="form-group hide" id="pastprojectTemplate">
+                            <div class="col-sm-offset-3 col-sm-5">
+                                <input class="form-control" type="text" name="pastprojects[]"
+                                       data-bv-uri="true"
+                                       data-bv-uri-message="The project is not valid URL"
+                                       required />
+                            </div>
+                            <div class="col-sm-4">
+                                <button type="button" class="btn btn-default removePastProject"><i class="fa fa-minus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<input type="submit" name="submit" id="submit" value="Submit" class="btn btn-info pull-right">-->
+            </div>
+        </form>
+        <div class="col-md-6">
+            <div class="col-md-12">
+                <div class="form-horizontal">
+                    <!-- Other fields not shown for brevity -->
+                    <div class="form-group">
+                        <label class="control-label col-md-12">FOAF Profile</label>
+                        <div class="col-border col-md-10 form-control-static" style="border: 1px solid; border-radius:5px; " id="rdf-data">
+                            asas
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <!-- Bootstrap validator -->
+        <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.min.js"></script>
+
+        <script src="js/n3-browser.min.js"></script>
+
+        <script>
+
+            $("#foafForm input,textarea,select").each(function () {
+                $(this).change(function () {
+
+                    alert(this.name);
+                    generateFOAF();
+                });
+            });
+
+            $(document).ready(function () {
+
+                // The maximum number of options
+                var MAX_OPTIONS = 5;
+
+                $('#foafForm').bootstrapValidator({
+                    feedbackIcons: {
+                        valid: 'glyphicon glyphicon-ok',
+                        invalid: 'glyphicon glyphicon-remove',
+                        validating: 'glyphicon glyphicon-refresh'
+                    },
+                    fields: {
+                        'option[]': {
+                            validators: {
+                                notEmpty: {
+                                    message: 'The option required and cannot be empty'
+                                }
+                                ,
+                                stringLength: {
+                                    max: 100,
+                                    message: 'The option must be less than 100 characters long'
+                                }
+                            }
+                        }
+                    }
+                })
+
+                    // Add button click handler
+                        .on('click', '.addButton', function () {
+                                var $template = $('#optionTemplate'),
+                                        $clone = $template
+                                                .clone()
+                                                .removeClass('hide')
+                                                .removeAttr('id')
+                                                .insertBefore($template),
+                                        $option = $clone.find('[name="option[]"]');
+
+                                $option.change(function () {
+
+                                    alert(this.name);
+                                    generateFOAF();
+                                });
+
+                                // Add new field
+                                $('#foafForm').bootstrapValidator('addField', $option);
+                        })
+
+                        .on('click', '.addPastProject', function () {
+                            var $template = $('#pastprojectTemplate'),
+                                    $clone = $template
+                                            .clone()
+                                            .removeClass('hide')
+                                            .removeAttr('id')
+                                            .insertBefore($template),
+                                    $pastProject = $clone.find('[name="pastprojects[]"]');
+
+                            $pastProject.change(function () {
+
+                                alert(this.name);
+                                generateFOAF();
+                            });
+
+                            // Add new field
+                            $('#foafForm').bootstrapValidator('addField', $pastProject);
+                        })
+
+                    // Remove button click handler
+                        .on('click', '.removeButton', function () {
+                            var $row = $(this).parents('.form-group'),
+                                    $option = $row.find('[name="option[]"]');
+
+                            // Remove element containing the option
+                            $row.remove();
+
+                            // Remove field
+                            $('#foafForm').bootstrapValidator('removeField', $option);
+                        })
+
+                    // Remove button click handler
+                        .on('click', '.removePastProject', function () {
+                            var $row = $(this).parents('.form-group'),
+                                    $pastproject = $row.find('[name="pastproject[]"]');
+
+                            // Remove element containing the option
+                            $row.remove();
+
+                            // Remove field
+                            $('#foafForm').bootstrapValidator('removeField', $pastproject);
+                        })
+
+                    // Called after adding new field
+                        .on('added.field.bv', function (e, data) {
+                            // data.field   --> The field name
+                            // data.element --> The new field element
+                            // data.options --> The new field options
+
+                            if (data.field === 'option[]') {
+                                if ($('#foafForm').find(':visible[name="option[]"]').length >= MAX_OPTIONS) {
+                                    $('#foafForm').find('.addButton').attr('disabled', 'disabled');
+                                }
+                            } else if (data.field === 'pastprojects[]') {
+                                if ($('#foafForm').find(':visible[name="pastprojects[]"]').length >= MAX_OPTIONS) {
+                                    $('#foafForm').find('.addButton').attr('disabled', 'disabled');
+                                }
+                            }
+                        })
+
+                    // Called after removing the field
+                        .on('removed.field.bv', function (e, data) {
+                            if (data.field === 'option[]') {
+                                if ($('#foafForm').find(':visible[name="option[]"]').length < MAX_OPTIONS) {
+                                    $('#foafForm').find('.addButton').removeAttr('disabled');
+                                }
+                            } else if (data.field === 'pastprojects[]') {
+                                if ($('#foafForm').find(':visible[name="pastprojects[]"]').length < MAX_OPTIONS) {
+                                    $('#foafForm').find('.addButton').removeAttr('disabled');
+                                }
+                            }
+                        });
+            });
+
+            function generateFOAF() {
+
+                var firstName = document.getElementById('FirstName');
+                var lastName = document.getElementById('LastName');
+                var nickname = document.getElementById('Nickname');
+                var email = document.getElementById('Email');
+                var homepage = document.getElementById('Homepage');
+
+                var options =  document.getElementsByName('option[]');
+                var pastprojects =  document.getElementsByName('pastprojects[]');
+
+                alert(options.length);
+                alert(pastprojects.length);
+
+                for (i = 0; i < options.length; i++) {
+                    alert(options[i].value)
+                }
+
+
+
+                var writer = N3.Writer({
+                    'foaf': 'http://xmlns.com/foaf/0.1/',
+                    'rdfs': 'http://www.w3.org/2000/01/rdf-schema#',
+                    'rdf': 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+                });
+
+                if (firstName.value) {
+                    writer.addTriple('#me',
+                            'http://xmlns.com/foaf/0.1/givenname',
+                            '\"' + firstName.value + '\"');
+                }
+
+                if (lastName.value) {
+                    writer.addTriple('#me',
+                            'http://xmlns.com/foaf/0.1/family_name',
+                            '\"' + lastName.value + '\"');
+                }
+
+                if (firstName.value && lastName.value) {
+                    writer.addTriple('#me',
+                            'http://xmlns.com/foaf/0.1/name',
+                            '\"' + firstName.value + " " + lastName.value + '\"');
+                }
+
+                if (nickname.value) {
+                    writer.addTriple('#me',
+                            'http://xmlns.com/foaf/0.1/nick',
+                            '\"' + nickname.value + '\"');
+                }
+
+                if (homepage.value) {
+                    writer.addTriple('#me',
+                            'http://xmlns.com/foaf/0.1/homepage',
+                            homepage.value);
+                }
+
+
+                writer.end(function (error, result) {
+                    console.log(result);
+                    var rdfData = document.getElementById('rdf-data');
+                    rdfData.innerText = result;
+
+                });
+            }
+
+        </script>
+
+
+
+</body>
+</html>
